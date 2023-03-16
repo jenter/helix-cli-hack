@@ -336,6 +336,8 @@ window.LiveReloadOptions = {
         );
       }
 
+      console.log('🚀 ~ file: utils.js:335 ~ proxyRequest ~ textBody:', textBody);
+
       res
         .status(ret.status)
         .set(respHeaders)

@@ -94,6 +94,7 @@ export class HelixImportServer extends BaseServer {
     if (isBodyReq) {
       body = new PassThrough();
       req.pipe(body);
+      console.log('🚀 ~ file: HelixImportServer.js:97 ~ HelixImportServer ~ _doProxyRequest ~ body:', body);
     }
 
     const headers = {
@@ -161,6 +162,9 @@ export class HelixImportServer extends BaseServer {
       text = text.replace(replacer, '/');
       replacer = new RegExp(host, 'gm');
       text = text.replace(replacer, '/');
+      
+      console.log('🚀 ~ file: HelixImportServer.js:165 ~ HelixImportServer ~ _doProxyRequest ~ text:', text);
+      
       res
         .status(ret.status)
         .set(respHeaders)

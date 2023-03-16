@@ -135,7 +135,14 @@ export default class UpCommand extends AbstractServerCommand {
 
     // replace `/` by `-` in ref.
     ref = ref.replace(/\//g, '-');
+
     this._url = `https://${ref}--${gitUrl.repo}--${gitUrl.owner}.hlx.page`;
+    // this._url = "https://wordworkertest.jason-enter.workers.dev";
+    // "https://wordworkertest.freshjones.workers.dev";
+
+    console.log("🚀 ~ this._url:", this._url);
+
+
     // check length limit
     if (this._url.split('.')
       .map((part) => part.replace(/^https:\/\//, ''))

@@ -70,6 +70,8 @@ export default class HeadHtmlSupport {
    * @returns {Promise<HastNode>}
    */
   static async toDom(html) {
+    console.log('🚀 ~ file: HeadHtmlSupport.js:73 ~ HeadHtmlSupport ~ toDom ~ html:', html);
+    
     return unified()
       .use(rehypeParse, { fragment: true })
       .parse(html);
