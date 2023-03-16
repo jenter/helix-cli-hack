@@ -1,0 +1,8 @@
+build
+coverage
+logs
+test
+docs
+test-results.xml
+/*.tgz
+/.*

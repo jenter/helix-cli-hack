@@ -1,0 +1,91 @@
+{
+  "name": "@adobe/helix-cli",
+  "version": "14.22.0",
+  "description": "Project Helix CLI",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "hlx": "./index.js"
+  },
+  "scripts": {
+    "check": "npm run lint && npm run test",
+    "test": "c8 mocha",
+    "test-ci-win": "npx mocha --reporter xunit test --reporter-options output=junit/test.xml -t 5000",
+    "lint": "eslint .",
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
+  },
+  "mocha": {
+    "require": "test/setup-env.js",
+    "recursive": "true",
+    "reporter": "mocha-multi-reporters",
+    "reporter-options": "configFile=.mocha-multi.json",
+    "loader": "esmock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/helix-cli.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/adobe/helix-cli/issues"
+  },
+  "homepage": "https://github.com/adobe/helix-cli#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@adobe/fetch": "4.0.5",
+    "@adobe/helix-log": "6.0.0",
+    "@adobe/helix-shared-config": "10.0.1",
+    "@adobe/helix-shared-git": "3.0.0",
+    "@adobe/helix-shared-indexer": "2.0.2",
+    "camelcase": "7.0.1",
+    "chalk-template": "0.5.0",
+    "chokidar": "3.5.3",
+    "compression": "1.7.4",
+    "cookie": "0.5.0",
+    "cookie-parser": "1.4.6",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "faye-websocket": "0.11.4",
+    "fs-extra": "11.1.0",
+    "glob": "9.3.0",
+    "glob-to-regexp": "0.4.1",
+    "hast-util-select": "5.0.5",
+    "ignore": "5.2.4",
+    "ini": "3.0.1",
+    "isomorphic-git": "1.21.0",
+    "livereload-js": "4.0.1",
+    "open": "8.4.2",
+    "progress": "2.0.3",
+    "rehype-parse": "8.0.4",
+    "semver": "7.3.8",
+    "shelljs": "0.8.5",
+    "unified": "10.1.2",
+    "uuid": "9.0.0",
+    "yargs": "17.7.1"
+  },
+  "devDependencies": {
+    "@adobe/eslint-config-helix": "2.0.2",
+    "@adobe/helix-shared-dom": "2.0.0",
+    "@adobe/helix-testutils": "0.4.14",
+    "@semantic-release/changelog": "6.0.2",
+    "@semantic-release/git": "10.0.1",
+    "c8": "7.13.0",
+    "eslint": "8.36.0",
+    "esmock": "2.1.0",
+    "husky": "8.0.3",
+    "junit-report-builder": "3.0.1",
+    "lint-staged": "13.2.0",
+    "mocha": "10.2.0",
+    "mocha-multi-reporters": "1.5.1",
+    "nock": "13.3.0",
+    "semantic-release": "20.1.1",
+    "sinon": "15.0.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  }
+}
