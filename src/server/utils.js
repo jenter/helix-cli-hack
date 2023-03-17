@@ -170,6 +170,7 @@ window.LiveReloadOptions = {
    * @param {Logger} logger a logger
    */
   async writeToCache(url, directory, { body, headers, status }, logger) {
+    console.log('🚀 ~>>>>>  url, directory:', url, directory);
     try {
       const filePath = utils.computePathForCache(url, directory);
       const parent = path.dirname(filePath);
